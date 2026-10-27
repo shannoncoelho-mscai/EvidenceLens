@@ -15,9 +15,7 @@
     --shadow: 0 14px 38px rgba(18, 43, 63, 0.09);
 }
 
-/* =========================================
-   GLOBAL STYLES
-========================================= */
+/* GLOBAL STYLES */
 
 * {
     box-sizing: border-box;
@@ -36,9 +34,7 @@ body {
     line-height: 1.75;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     margin-top: 0;
     color: var(--navy);
     font-family: "Manrope", sans-serif;
@@ -75,8 +71,7 @@ a {
     color: inherit;
 }
 
-button,
-textarea {
+button, textarea {
     font: inherit;
 }
 
@@ -92,9 +87,7 @@ textarea:focus-visible {
     margin-inline: auto;
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* NAVIGATION */
 
 .site-header {
     position: sticky;
@@ -156,25 +149,15 @@ textarea:focus-visible {
     background: var(--teal);
 }
 
-/* =========================================
-   HERO SECTION
-========================================= */
+/* HERO SECTION */
 
 .hero {
     position: relative;
     overflow: hidden;
     padding: 112px 0 105px;
     background:
-        radial-gradient(
-            ellipse at 85% 18%,
-            rgba(8, 127, 140, 0.17),
-            transparent 35%
-        ),
-        radial-gradient(
-            ellipse at 10% 95%,
-            rgba(231, 245, 239, 0.95),
-            transparent 42%
-        ),
+        radial-gradient(ellipse at 85% 18%, rgba(8, 127, 140, 0.17), transparent 35%),
+        radial-gradient(ellipse at 10% 95%, rgba(231, 245, 239, 0.95), transparent 42%),
         white;
 }
 
@@ -225,10 +208,7 @@ textarea:focus-visible {
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
-    transition:
-        transform 0.2s,
-        background 0.2s,
-        box-shadow 0.2s;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .btn:hover {
@@ -256,9 +236,7 @@ textarea:focus-visible {
     font-size: 0.88rem;
 }
 
-/* =========================================
-   GENERAL SECTIONS
-========================================= */
+/* GENERAL SECTIONS */
 
 .section {
     padding-top: 88px;
@@ -284,9 +262,7 @@ textarea:focus-visible {
     padding-bottom: 85px;
 }
 
-/* =========================================
-   CHALLENGE CARDS
-========================================= */
+/* CHALLENGE CARDS */
 
 .card-grid {
     display: grid;
@@ -339,9 +315,7 @@ textarea:focus-visible {
     font-size: 0.96rem;
 }
 
-/* =========================================
-   EVIDENCE GUIDE
-========================================= */
+/* EVIDENCE GUIDE */
 
 .evidence-list {
     display: grid;
@@ -396,9 +370,7 @@ textarea:focus-visible {
     margin-right: 5px;
 }
 
-/* =========================================
-   SYSTEMATIC REVIEWS COMPARISON
-========================================= */
+/* SYSTEMATIC REVIEWS */
 
 .comparison-grid {
     display: grid;
@@ -451,9 +423,7 @@ textarea:focus-visible {
     margin-top: 25px;
 }
 
-/* =========================================
-   CASE STUDIES
-========================================= */
+/* CASE STUDIES */
 
 .case-study {
     margin-top: 20px;
@@ -499,17 +469,11 @@ textarea:focus-visible {
     margin-bottom: 0;
 }
 
-/* =========================================
-   CLAIM CHECKER SECTION
-========================================= */
+/* CLAIM CHECKER SECTION */
 
 #claim-checker {
     background:
-        radial-gradient(
-            ellipse at 90% 0%,
-            rgba(8, 127, 140, 0.25),
-            transparent 38%
-        ),
+        radial-gradient(ellipse at 90% 0%, rgba(8, 127, 140, 0.25), transparent 38%),
         var(--navy);
 }
 
@@ -567,9 +531,12 @@ textarea:focus-visible {
     width: 100%;
 }
 
-/* =========================================
-   EXAMPLE CLAIM BUTTONS
-========================================= */
+#analyse-btn:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+/* EXAMPLE CLAIM BUTTONS */
 
 .examples-label {
     margin: 18px 0 10px;
@@ -593,10 +560,7 @@ textarea:focus-visible {
     font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .example-claim:hover,
@@ -607,22 +571,345 @@ textarea:focus-visible {
     transform: translateY(-2px);
 }
 
-/* =========================================
-   CLAIM CHECKER RESULTS
-========================================= */
+/* RESULTS CONTAINER */
 
 .checker-result {
+    width: 100%;
     margin-top: 24px;
-    padding: 24px;
-    border: 1px solid var(--line);
+    padding: 0;
+    border: 0;
     border-radius: 14px;
-    background: #f3faf6;
-    color: var(--ink);
+    background: #ffffff;
+    color: #203344;
+    text-align: left;
 }
 
 .checker-result[hidden] {
-    display: none;
+    display: none !important;
 }
+
+/* IMPORTANT: Explicitly set readable colours for the generated report. */
+
+#checker-result .analysis-results {
+    display: block;
+    width: 100%;
+    padding: 28px;
+    overflow-wrap: anywhere;
+    border: 1px solid #dce7e5;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #203344;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+#checker-result .analysis-results h2,
+#checker-result .analysis-results h3,
+#checker-result .analysis-results h4 {
+    color: #122b3f !important;
+    font-family: "Manrope", sans-serif;
+}
+
+#checker-result .analysis-results p,
+#checker-result .analysis-results li,
+#checker-result .analysis-results span {
+    color: #405467;
+}
+
+#checker-result .analysis-results strong {
+    color: #122b3f !important;
+}
+
+#checker-result .results-eyebrow {
+    margin: 0 0 8px;
+    color: #087f8c !important;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+#checker-result .results-header > h2 {
+    margin-bottom: 18px;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+#checker-result .submitted-claim {
+    margin: 0 0 22px;
+    padding: 15px;
+    border-left: 4px solid #087f8c;
+    border-radius: 8px;
+    background: #f0f8f6;
+    color: #203344 !important;
+}
+
+#checker-result .assessment {
+    margin: 18px 0;
+    padding: 20px;
+    border: 1px solid #cbdedb;
+    border-radius: 12px;
+    background: #f1f8f6;
+}
+
+#checker-result .assessment-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #526779 !important;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+#checker-result .assessment h3 {
+    margin: 0 0 8px;
+    color: #122b3f !important;
+}
+
+#checker-result .assessment p {
+    margin-bottom: 0;
+}
+
+#checker-result .assessment-contradicting-evidence-found {
+    border-left: 5px solid #c65d56;
+    background: #fff5f3;
+}
+
+#checker-result .assessment-supporting-evidence-found {
+    border-left: 5px solid #218663;
+    background: #f0faf4;
+}
+
+#checker-result .assessment-inconclusive {
+    border-left: 5px solid #c28a30;
+    background: #fffaf0;
+}
+
+#checker-result .results-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#checker-result .results-summary p {
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #e1e9e7;
+    border-radius: 10px;
+    background: #f7faf9;
+    color: #405467 !important;
+}
+
+#checker-result .analysis-summary,
+#checker-result .results-explanation,
+#checker-result .no-results,
+#checker-result .model-status {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e1e9e7;
+    border-radius: 12px;
+    background: #f7faf9;
+}
+
+#checker-result .analysis-summary p:last-child,
+#checker-result .results-explanation p:last-child,
+#checker-result .no-results p:last-child,
+#checker-result .model-status p:last-child {
+    margin-bottom: 0;
+}
+
+#checker-result .results-explanation h3,
+#checker-result .no-results h3,
+#checker-result .model-status h3 {
+    margin-bottom: 12px;
+}
+
+#checker-result .results-explanation p {
+    margin: 10px 0;
+}
+
+#checker-result .evidence-group {
+    margin-top: 28px;
+}
+
+#checker-result .evidence-group > h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+}
+
+#checker-result .evidence-count {
+    display: inline-grid;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 8px;
+    place-items: center;
+    border-radius: 999px;
+    background: #e8efed;
+    color: #203344 !important;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+}
+
+#checker-result .publication-list {
+    display: grid;
+    gap: 14px;
+}
+
+#checker-result .publication-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #dfe8e6;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #203344;
+    box-shadow: 0 4px 14px rgba(18, 43, 63, 0.035);
+}
+
+#checker-result .publication-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+#checker-result .evidence-tag {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+#checker-result .evidence-tag-supports {
+    background: #e5f6ec;
+    color: #176c48 !important;
+}
+
+#checker-result .evidence-tag-contradicts {
+    background: #fff0ed;
+    color: #a53d36 !important;
+}
+
+#checker-result .evidence-tag-inconclusive {
+    background: #fff5df;
+    color: #805b14 !important;
+}
+
+#checker-result .publication-year {
+    color: #68798a !important;
+    font-size: 0.84rem;
+}
+
+#checker-result .publication-card h4 {
+    margin: 0 0 10px;
+    color: #122b3f !important;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+#checker-result .publication-card p {
+    margin: 8px 0;
+    color: #405467 !important;
+    font-size: 0.92rem;
+}
+
+#checker-result .publication-card p strong {
+    color: #203344 !important;
+}
+
+#checker-result .publication-authors,
+#checker-result .publication-journal {
+    font-size: 0.86rem !important;
+}
+
+#checker-result .publication-relevance,
+#checker-result .publication-relationship {
+    padding: 9px 11px;
+    border-radius: 7px;
+    background: #f5f8f7;
+}
+
+#checker-result .publication-abstract {
+    margin-top: 12px !important;
+    line-height: 1.7;
+}
+
+#checker-result .publication-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #087f8c !important;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+#checker-result .publication-link:hover {
+    color: #05636e !important;
+}
+
+#checker-result .results-disclaimer {
+    margin-top: 26px;
+    padding: 20px;
+    border-left: 4px solid #efa66b;
+    border-radius: 8px;
+    background: #fff8f0;
+}
+
+#checker-result .results-disclaimer h3 {
+    margin-bottom: 10px;
+    color: #70451e !important;
+}
+
+#checker-result .results-disclaimer p {
+    margin-bottom: 0;
+    color: #5e5146 !important;
+    font-size: 0.9rem;
+}
+
+#checker-result .analysis-loading,
+#checker-result .analysis-error {
+    padding: 24px;
+    border: 1px solid #dce7e5;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #203344 !important;
+}
+
+#checker-result .analysis-loading h3,
+#checker-result .analysis-error h3 {
+    color: #122b3f !important;
+}
+
+#checker-result .analysis-loading p,
+#checker-result .analysis-error p {
+    color: #405467 !important;
+}
+
+#checker-result .analysis-error {
+    border-left: 5px solid #c65d56;
+    background: #fff5f3;
+}
+
+#checker-result .loading-spinner {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 15px;
+    border: 4px solid #dce9e6;
+    border-top-color: #087f8c;
+    border-radius: 50%;
+    animation: evidence-spin 0.8s linear infinite;
+}
+
+@keyframes evidence-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* CHECKLIST RESULTS */
 
 .checker-result h3 {
     margin-bottom: 12px;
@@ -641,9 +928,7 @@ textarea:focus-visible {
     color: var(--navy);
 }
 
-/* =========================================
-   EVIDENCE REVIEW PROGRESS BAR
-========================================= */
+/* EVIDENCE REVIEW PROGRESS BAR */
 
 .review-progress {
     margin: 18px 0 10px;
@@ -668,9 +953,7 @@ textarea:focus-visible {
     transition: width 0.3s ease;
 }
 
-/* =========================================
-   INTERACTIVE EVIDENCE CHECKLIST
-========================================= */
+/* INTERACTIVE EVIDENCE CHECKLIST */
 
 .evidence-checklist {
     display: grid;
@@ -682,9 +965,7 @@ textarea:focus-visible {
     border: 1px solid #dce8e5;
     border-radius: 13px;
     background: white;
-    transition:
-        border-color 0.2s ease,
-        background 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .evidence-question.reviewed {
@@ -724,9 +1005,7 @@ textarea:focus-visible {
     line-height: 1.6;
 }
 
-/* =========================================
-   REVIEW CONCLUSION AND DISCLAIMER
-========================================= */
+/* REVIEW CONCLUSION AND DISCLAIMER */
 
 .review-conclusion {
     margin-top: 20px;
@@ -742,9 +1021,7 @@ textarea:focus-visible {
     color: var(--muted);
 }
 
-/* =========================================
-   RESET REVIEW BUTTON
-========================================= */
+/* RESET REVIEW BUTTON */
 
 .reset-review {
     margin-top: 12px;
@@ -755,9 +1032,7 @@ textarea:focus-visible {
     color: var(--navy);
     font-weight: 700;
     cursor: pointer;
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .reset-review:hover {
@@ -765,9 +1040,7 @@ textarea:focus-visible {
     color: white;
 }
 
-/* =========================================
-   CLOSING SECTION
-========================================= */
+/* CLOSING SECTION */
 
 .closing-section {
     padding: 78px 0;
@@ -794,9 +1067,7 @@ textarea:focus-visible {
     border: 1px solid #d3e7df;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 .site-footer {
     padding: 38px 0;
@@ -818,18 +1089,14 @@ textarea:focus-visible {
     margin: 12px auto 0;
 }
 
-/* =========================================
-   TEXT SELECTION
-========================================= */
+/* TEXT SELECTION */
 
 ::selection {
     background: var(--teal);
     color: white;
 }
 
-/* =========================================
-   TABLET RESPONSIVENESS
-========================================= */
+/* TABLET RESPONSIVENESS */
 
 @media (max-width: 900px) {
     .navbar {
@@ -851,9 +1118,7 @@ textarea:focus-visible {
     }
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS
-========================================= */
+/* MOBILE RESPONSIVENESS */
 
 @media (max-width: 600px) {
     .container {
@@ -901,7 +1166,19 @@ textarea:focus-visible {
     }
 
     .checker-result {
-        padding: 16px;
+        padding: 0;
+    }
+
+    #checker-result .analysis-results {
+        padding: 17px;
+    }
+
+    #checker-result .publication-card {
+        padding: 15px;
+    }
+
+    #checker-result .results-summary {
+        grid-template-columns: 1fr;
     }
 
     .nav-links {
@@ -934,9 +1211,7 @@ textarea:focus-visible {
     }
 }
 
-/* =========================================
-   ACCESSIBILITY: REDUCED MOTION
-========================================= */
+/* ACCESSIBILITY: REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -949,5 +1224,9 @@ textarea:focus-visible {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+
+    #checker-result .loading-spinner {
+        animation: none;
     }
 }
