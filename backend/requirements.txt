@@ -1,0 +1,14 @@
+# EvidenceLens backend dependencies
+# Compatible with Python 3.12
+
+flask>=3.0.0,<3.1
+flask-cors>=4.0.0,<5.0
+requests>=2.31.0,<3.0
+scikit-learn>=1.4.0,<1.6
+python-dotenv>=1.0.0,<2.0
+transformers>=4.46.0,<5.0
+torch>=2.5.0,<3.0
+
+# Test dependencies
+pytest>=8.0.0,<9.0
+pytest-mock>=3.12.0,<4.0
